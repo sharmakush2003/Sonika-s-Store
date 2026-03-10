@@ -5,18 +5,7 @@ import Image from "next/image";
 import { WhatsAppIcon, InstagramIcon } from "../components/Icons";
 import Footer from "../components/Footer";
 import ParallaxImage from "../components/ParallaxImage";
-import ShopTheLook from "../components/ShopTheLook";
-
-// hot spots no longer rendered; type kept for data shape
-interface Hotspot {
-  id: string;
-  x: number;
-  y: number;
-  title: string;
-  price: string;
-  desc: string;
-  img?: string;
-}
+import ShopTheLook, { Hotspot } from "../components/ShopTheLook";
 import { motion } from "framer-motion";
 
 /* ── DATA ── */
@@ -288,7 +277,7 @@ export default function Home() {
                       <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-500 pointer-events-none" />
                     </div>
                   </ShopTheLook>
-                  <div className="fc-top absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md rounded-full w-12 h-12 flex items-center justify-center shadow-lg pointer-events-none">{item.icon}</div>
+
                 </div>
                 <div className="p-8 text-left bg-white border-t border-sand/20 flex flex-col h-full">
                   <div className="uppercase tracking-[2px] text-[11px] mb-1 text-gold font-semibold">{item.subtitle}</div>
