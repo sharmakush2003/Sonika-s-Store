@@ -28,8 +28,6 @@ export const viewport: Viewport = {
 
 import SonikaBot from "../components/SonikaBot";
 import Preloader from "../components/Preloader";
-import { ThemeProvider } from "../components/ThemeProvider";
-import ThemeToggle from "../components/ThemeToggle";
 
 export default function RootLayout({
   children,
@@ -63,13 +61,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased selection:bg-rose/20 selection:text-deep transition-colors duration-500">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Preloader />
           {children}
           <SonikaBot />
-          <ThemeToggle />
-        </ThemeProvider>
-      </body>
+        </body>
     </html>
   );
 }
