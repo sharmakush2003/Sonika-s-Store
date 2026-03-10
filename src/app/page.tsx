@@ -5,7 +5,18 @@ import Image from "next/image";
 import { WhatsAppIcon, InstagramIcon } from "../components/Icons";
 import Footer from "../components/Footer";
 import ParallaxImage from "../components/ParallaxImage";
-import ShopTheLook, { Hotspot } from "../components/ShopTheLook";
+import ShopTheLook from "../components/ShopTheLook";
+
+// hot spots no longer rendered; type kept for data shape
+interface Hotspot {
+  id: string;
+  x: number;
+  y: number;
+  title: string;
+  price: string;
+  desc: string;
+  img?: string;
+}
 import { motion } from "framer-motion";
 
 /* ── DATA ── */
