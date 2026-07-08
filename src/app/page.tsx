@@ -9,6 +9,7 @@ import ShopTheLook, { Hotspot } from "../components/ShopTheLook";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchModal from "../components/SearchModal";
 import { SearchIcon } from "../components/Icons";
+import Link from "next/link";
 
 const HERO_IMAGES = [
   "/images/New%20images/Bedsheet.jpg",
@@ -359,13 +360,34 @@ export default function Home() {
 
 
       {/* ── STATS ── */}
-      <section className="py-24 px-6 text-center text-cream bg-deep">
-        <h2 className="reveal font-light mb-16 font-serif text-fluid-h2">The <span className="text-gold">Jaipur Promise</span></h2>
-        <div className="reveal grid grid-cols-2 md:grid-cols-4 max-w-5xl mx-auto gap-[2px] bg-gold/10 border border-gold/10">
-          <div className="stat-box bg-deep"><div className="text-[52px] font-light text-gold" style={{ fontFamily: "'Cormorant Garamond', serif" }}>2+</div><div className="text-[11px] uppercase tracking-[3px] opacity-50">Categories</div></div>
-          <div className="stat-box bg-deep"><div className="text-[52px] font-light text-gold" style={{ fontFamily: "'Cormorant Garamond', serif" }}>100%</div><div className="text-[11px] uppercase tracking-[3px] opacity-50">Authentic</div></div>
-          <div className="stat-box bg-deep"><div className="text-[52px] font-light text-gold" style={{ fontFamily: "'Cormorant Garamond', serif" }}>50+</div><div className="text-[11px] uppercase tracking-[3px] opacity-50">Designs</div></div>
-          <div className="stat-box bg-deep"><div className="text-[52px] font-light text-gold" style={{ fontFamily: "'Cormorant Garamond', serif" }}>❤️</div><div className="text-[11px] uppercase tracking-[3px] opacity-50">With Love</div></div>
+      <section className="py-24 px-6 text-center text-cream bg-deep relative overflow-hidden">
+        {/* Subtle background texture */}
+        <div className="absolute inset-0 opacity-5 bg-[url('/images/fancy%20suit.jpg')] bg-cover bg-center mix-blend-overlay pointer-events-none"></div>
+        
+        <div className="relative z-10">
+          <h2 className="reveal font-light mb-8 font-serif text-fluid-h2">The <span className="text-gold">Jaipur Promise</span></h2>
+          <p className="max-w-2xl mx-auto text-cream/70 font-light mb-16 text-[16px] md:text-[20px]">
+            Every piece in our collection is a testament to the centuries-old block printing techniques of Rajasthan. We preserve the craft while bringing you unparalleled luxury.
+          </p>
+          
+          <div className="flex flex-col md:flex-row justify-center gap-12 md:gap-24 mb-20 max-w-4xl mx-auto">
+            <div className="reveal transition-transform duration-500 hover:-translate-y-2">
+              <div className="text-[48px] md:text-[64px] font-serif text-gold mb-2">100%</div>
+              <div className="text-[12px] uppercase tracking-[3px] opacity-80">Authentic Jaipuri</div>
+            </div>
+            <div className="reveal transition-transform duration-500 hover:-translate-y-2 [transition-delay:100ms]">
+              <div className="text-[48px] md:text-[64px] font-serif text-gold mb-2">35+</div>
+              <div className="text-[12px] uppercase tracking-[3px] opacity-80">Master Artisans</div>
+            </div>
+            <div className="reveal transition-transform duration-500 hover:-translate-y-2 [transition-delay:200ms]">
+              <div className="text-[48px] md:text-[64px] font-serif text-gold mb-2">48h</div>
+              <div className="text-[12px] uppercase tracking-[3px] opacity-80">Pan-India Delivery</div>
+            </div>
+          </div>
+          
+          <Link href="/our-heritage" className="reveal inline-block px-10 py-4 bg-transparent border border-gold text-gold hover:bg-gold hover:text-deep transition-all duration-300 text-[12px] uppercase tracking-[4px] font-semibold">
+            Discover Our Heritage
+          </Link>
         </div>
       </section>
 
