@@ -1,12 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { WhatsAppIcon, InstagramIcon } from "../components/Icons";
 import Footer from "../components/Footer";
 import ParallaxImage from "../components/ParallaxImage";
 import ShopTheLook, { Hotspot } from "../components/ShopTheLook";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+const HERO_IMAGES = [
+  "/images/New%20images/Bedsheet.jpg",
+  "/images/New%20images/Bed%20Covers.webp",
+  "/images/New%20images/Quilted%20BedCovers.jpg",
+  "/images/New%20images/Comforters.jpg",
+  "/images/New%20images/Dohar.jpg"
+];
 
 /* ── DATA ── */
 const FURNISH_ITEMS: { img: string; name: string; desc: string; spots?: Hotspot[] }[] = [
@@ -163,6 +171,15 @@ const MARQUEE_TEXT = [
 ];
 
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -174,21 +191,52 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-ivory text-deep">
       {/* ── HERO ── */}
-      <section className="hero-wrap min-h-screen flex flex-col items-center justify-center text-center px-6 py-20" style={{ background: "radial-gradient(ellipse at 20% 80%, rgba(192,72,74,0.12) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(201,148,58,0.14) 0%, transparent 55%), radial-gradient(ellipse at 50% 50%, rgba(42,107,107,0.06) 0%, transparent 70%), #FAF5EE" }}>
-        <div className="afu1 tracking-[12px] mb-6 text-gold text-[22px]">✦ JAIPUR ✦</div>
+      <section className="hero-wrap relative min-h-screen">
+        
+        {/* Dynamic Background Carousel */}
+        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <Image 
+                src={HERO_IMAGES[currentImageIndex]} 
+                alt="House of Sonika" 
+                fill 
+                className="object-contain md:object-cover opacity-90"
+                priority
+              />
+            </motion.div>
+          </AnimatePresence>
+          {/* Light Overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-[#FAF5EE]/50 backdrop-blur-[2px]" />
+          
+          {/* Subtle Radial Gradients for aesthetics */}
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 20% 80%, rgba(192,72,74,0.12) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(201,148,58,0.14) 0%, transparent 55%), radial-gradient(ellipse at 50% 50%, rgba(42,107,107,0.06) 0%, transparent 70%)" }} />
+        </div>
+
+        {/* Content Wrapper */}
+        <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 pointer-events-none">
+          <div className="afu1 tracking-[12px] mb-6 text-gold text-[22px] pointer-events-auto">✦ JAIPUR ✦</div>
         <h1 className="afu2 font-light leading-none tracking-tighter font-serif text-fluid-h1 text-deep">
           House <em className="not-italic text-rose">of</em> Sonika
         </h1>
         <p className="afu3 mt-4 uppercase tracking-[8px] text-muted text-xs sm:text-sm font-medium">
           Home Furnishing · Ethnic Fashion · Craftsmanship
         </p>
-        <div className="hero-divider afu4"><span>❋</span></div>
-        <p className="afu5 font-light max-w-[600px] leading-relaxed text-muted font-serif text-fluid-p">
+        <div className="hero-divider afu4 pointer-events-auto"><span>❋</span></div>
+        <p className="afu5 font-light max-w-[600px] leading-relaxed text-muted font-serif text-fluid-p pointer-events-auto">
           Where the warmth of Jaipur's artisan heritage meets the elegance of everyday living — curated with love, delivered to your home.
         </p>
-        <div className="afu6 flex gap-4 flex-wrap justify-center mt-11">
+        <div className="afu6 flex gap-4 flex-wrap justify-center mt-11 pointer-events-auto">
           <a href="https://wa.me/8188000001?text=Hi%20House%20of%20Sonika!%20I'd%20love%20to%20explore%20your%20handpicked%20collections." target="_blank" rel="noreferrer" className="btn btn-primary"><WhatsAppIcon /> Shop on WhatsApp</a>
           <a href="#" className="btn btn-outline"><InstagramIcon /> @houseofsonika</a>
+        </div>
         </div>
       </section>
 
