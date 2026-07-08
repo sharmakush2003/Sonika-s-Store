@@ -69,8 +69,8 @@ export default function Footer() {
             <div className="text-[12px] font-bold tracking-[5px] uppercase text-gold mb-10">The House</div>
             <ul className="space-y-5">
               <li><a href="/our-heritage" className="footer-link">Our Heritage</a></li>
-              <li><a href="#" className="footer-link">The Sonika Story</a></li>
-              <li><a href="#" className="footer-link">Artisan Craft</a></li>
+              <li><a href="/the-sonika-story" className="footer-link">The Sonika Story</a></li>
+              <li><a href="/artisan-craft" className="footer-link">Artisan Craft</a></li>
               <li><a href="/sustainability" className="footer-link">Sustainability</a></li>
               <li><a href="/privacy-policy" className="footer-link">Privacy Policy</a></li>
             </ul>
