@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import ParallaxImage from "../components/ParallaxImage";
 import ShopTheLook, { Hotspot } from "../components/ShopTheLook";
 import { motion, AnimatePresence } from "framer-motion";
+import SearchModal from "../components/SearchModal";
+import { SearchIcon } from "../components/Icons";
 
 const HERO_IMAGES = [
   "/images/New%20images/Bedsheet.jpg",
@@ -17,7 +19,7 @@ const HERO_IMAGES = [
 ];
 
 /* ── DATA ── */
-const FURNISH_ITEMS: { img: string; name: string; desc: string; spots?: Hotspot[] }[] = [
+export const FURNISH_ITEMS: { img: string; name: string; desc: string; spots?: Hotspot[] }[] = [
   { 
     img: "/images/New%20images/Bedsheet.jpg", 
     name: "Bedsheets", 
@@ -85,7 +87,7 @@ const FURNISH_ITEMS: { img: string; name: string; desc: string; spots?: Hotspot[
   },
 ];
 
-const FASHION_ITEMS: { icon: string; subtitle: string; title: string; desc: string; tags: string[]; img: string; spots?: Hotspot[] }[] = [
+export const FASHION_ITEMS: { icon: string; subtitle: string; title: string; desc: string; tags: string[]; img: string; spots?: Hotspot[] }[] = [
   { 
     icon: "👘", 
     subtitle: "Casual Ethnic", 
@@ -172,6 +174,7 @@ const MARQUEE_TEXT = [
 
 export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -189,7 +192,17 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-ivory text-deep">
+    <main className="min-h-screen bg-ivory text-deep relative">
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      
+      {/* Floating Search Button */}
+      <button 
+        onClick={() => setIsSearchOpen(true)}
+        className="fixed top-6 right-6 z-50 p-3 bg-ivory/80 backdrop-blur border border-sand/30 rounded-full shadow-sm hover:shadow-md transition-all text-deep/70 hover:text-deep hover:bg-ivory"
+      >
+        <SearchIcon className="w-5 h-5" />
+      </button>
+
       {/* ── HERO ── */}
       <section className="hero-wrap relative min-h-screen">
         
@@ -342,6 +355,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+
 
       {/* ── STATS ── */}
       <section className="py-24 px-6 text-center text-cream bg-deep">
