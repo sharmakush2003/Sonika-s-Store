@@ -124,36 +124,7 @@ export default function OurHeritage() {
         </div>
       </section>
 
-      {/* ── 4. THE FINAL MASTERPIECE (Call to action) ── */}
-      <section className="py-32 px-6 bg-deep text-cream text-center relative overflow-hidden">
-        <motion.div style={{ y: y2 }} className="absolute inset-0 z-0 opacity-10">
-          <div className="w-full h-full bg-[url('/images/New%20images/Quilts.jpg')] bg-cover bg-center"></div>
-        </motion.div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="relative z-10 max-w-2xl mx-auto"
-        >
-          <div className="text-[40px] mb-6">❋</div>
-          <h2 className="text-[32px] md:text-[48px] font-serif leading-tight mb-6">
-            Bring the Heritage <em className="italic text-gold">Home</em>
-          </h2>
-          <p className="text-cream/70 leading-relaxed mb-10">
-            When you purchase from House of Sonika, you aren't just buying a piece of fabric. You are keeping centuries of artisanal heritage alive and bringing the soulful warmth of Jaipur into your everyday life.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/" className="px-8 py-3 bg-gold text-deep uppercase tracking-[2px] text-[11px] font-semibold hover:bg-cream transition-colors duration-300">
-              Return Home
-            </Link>
-            <a href="https://wa.me/8188000001" target="_blank" rel="noreferrer" className="px-8 py-3 border border-gold text-gold uppercase tracking-[2px] text-[11px] font-semibold flex items-center gap-2 hover:bg-gold hover:text-deep transition-colors duration-300">
-              <WhatsAppIcon className="w-4 h-4" /> Shop the Collection
-            </a>
-          </div>
-        </motion.div>
-      </section>
+
 
       <Footer />
     </main>
