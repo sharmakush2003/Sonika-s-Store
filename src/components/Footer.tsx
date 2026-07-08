@@ -105,7 +105,7 @@ export default function Footer() {
 
           <div className="w-full md:w-auto mt-6 md:mt-0 text-center md:text-right group cursor-default">
             <div className="text-[10px] uppercase tracking-[2px] text-cream/50 inline-block">
-              <span className="opacity-80 mr-1.5">Handcrafted by Kush Sharma @ software developer at</span>
+              <span className="opacity-80 mr-1.5">Handcrafted by</span>
               <a
                 href="https://digifysoft.in/"
                 target="_blank"
