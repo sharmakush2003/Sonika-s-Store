@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { WhatsAppIcon } from "../../components/Icons";
+import Footer from "../../components/Footer";
 
 export default function OurHeritage() {
   const containerRef = useRef(null);
@@ -138,6 +139,7 @@ export default function OurHeritage() {
         </motion.div>
       </section>
 
+      <Footer />
     </main>
   );
 }
