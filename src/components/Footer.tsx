@@ -32,11 +32,16 @@ export default function Footer() {
               "Where the warmth of Jaipur's artisan heritage meets the elegance of everyday living — curated with love, delivered to your home."
             </p>
             
-            <div className="mb-10 text-[14px] leading-relaxed text-cream/50" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              <div className="text-gold/80 font-semibold mb-1 uppercase tracking-widest text-[11px]">Visit Our Studio</div>
-              <div>Sonika Malik</div>
+            <div className="mb-8 text-[14px] leading-relaxed text-cream/70" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <div className="text-gold font-semibold mb-2 uppercase tracking-widest text-[11px]">Visit Our Studio</div>
+              <div className="font-semibold text-cream text-[15px] mb-0.5">Sonika Malik</div>
               <div>C107, Akashganga, Civil Lines</div>
               <div>Jaipur, 302006</div>
+              <div className="mt-3 pt-2 border-t border-gold/15">
+                <a href="mailto:sonikamalik.sm@gmail.com" className="text-gold hover:text-gold/80 transition-colors text-[13px] tracking-wide font-sans block">
+                  sonikamalik.sm@gmail.com
+                </a>
+              </div>
             </div>
 
             <div className="flex gap-5">
@@ -46,7 +51,7 @@ export default function Footer() {
               <a href="https://wa.me/8188000001?text=Hi%20House%20of%20Sonika!%20I'd%20like%20to%20enquire%20about%20your%20handcrafted%20products." target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="WhatsApp">
                 <WhatsAppIcon className="w-5 h-5" />
               </a>
-              <a href="mailto:Sonikamalik.sm@gmail.com" className="social-icon-btn" aria-label="Email">
+              <a href="mailto:sonikamalik.sm@gmail.com" className="social-icon-btn" aria-label="Email">
                 <MailIcon className="w-5 h-5" />
               </a>
             </div>

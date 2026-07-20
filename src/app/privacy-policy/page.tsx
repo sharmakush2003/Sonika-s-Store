@@ -101,11 +101,20 @@ export default function PrivacyPolicyPage() {
 
             <div id="contact" className="reveal scroll-mt-32 border-t border-sand/30 pt-10">
               <h2 className="text-[24px] font-serif font-light text-deep mb-6">6. Contact Us</h2>
-              <p className="mb-6">
-                If you have any questions about this Privacy Policy or how we handle your data, please contact Sonika Malik via:
+              <p className="mb-6 text-muted">
+                If you have any questions about this Privacy Policy, wish to visit our studio, or need support with your order, please contact Sonika Malik via:
               </p>
+
+              <div className="mb-8 p-6 bg-sand/20 border border-gold/20 rounded-sm font-serif">
+                <h4 className="text-[18px] text-deep font-semibold mb-2">House of Sonika Studio</h4>
+                <p className="text-deep font-medium mb-1">Sonika Malik</p>
+                <p className="text-deep/70 leading-relaxed">C107, Akashganga, Civil Lines</p>
+                <p className="text-deep/70 leading-relaxed mb-3">Jaipur, 302006</p>
+                <p className="text-deep/80 text-[14px]"><strong>Email:</strong> <a href="mailto:sonikamalik.sm@gmail.com" className="text-rose underline hover:text-gold transition-colors font-sans">sonikamalik.sm@gmail.com</a></p>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-8">
-                 <a href="mailto:Sonikamalik.sm@gmail.com" className="px-8 py-4 bg-deep text-cream uppercase tracking-[3px] text-[10px] font-bold hover:bg-gold transition-colors text-center">
+                 <a href="mailto:sonikamalik.sm@gmail.com" className="px-8 py-4 bg-deep text-cream uppercase tracking-[3px] text-[10px] font-bold hover:bg-gold transition-colors text-center">
                    Email Us
                  </a>
                  <a href="https://wa.me/8188000001" className="px-8 py-4 border border-deep text-deep uppercase tracking-[3px] text-[10px] font-bold hover:bg-deep hover:text-cream transition-colors text-center">
