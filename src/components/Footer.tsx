@@ -83,8 +83,8 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-gold/10 flex flex-col md:flex-row justify-between items-center gap-10">
-          <div className="text-[11px] uppercase tracking-[4px] text-cream/50 font-medium text-center md:text-left">
-            © 2025 House of Sonika · Authentically Jaipur · Handcrafted with Purpose
+          <div className="text-[11px] uppercase tracking-[4px] text-cream/60 font-medium text-center md:text-left">
+            © 2026 House of Sonika · Timeless Jaipur Heritage · Handcrafted with Elegance & Purpose
           </div>
 
           <div className="w-full md:w-auto mt-6 md:mt-0 text-center md:text-right group cursor-default">
