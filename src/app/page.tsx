@@ -271,41 +271,44 @@ export default function Home() {
       </div>
 
       {/* ── HOME FURNISHING ── */}
-      <section className="py-24 px-6 relative" style={{ background: "radial-gradient(ellipse at 90% 10%, rgba(201,148,58,0.08) 0%, transparent 50%), var(--blush)" }}>
+      <section id="home-furnishing" className="py-24 px-6 relative scroll-mt-20" style={{ background: "radial-gradient(ellipse at 90% 10%, rgba(201,148,58,0.08) 0%, transparent 50%), var(--blush)" }}>
         <div className="max-w-[1200px] mx-auto text-center">
           <p className="reveal uppercase tracking-[6px] text-[10px] mb-[10px] text-gold">Home Furnishing Collection</p>
           <h2 className="reveal font-light mb-[14px] font-serif text-fluid-h2 text-deep">Wrap Your Home in <em className="not-italic text-rose">Jaipur Magic</em></h2>
           <div className="reveal w-[60px] h-[2px] mx-auto mb-16" style={{ background: "linear-gradient(90deg, var(--rose), var(--gold))" }} />
 
           <div className="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px] bg-sand/30 border border-sand/30">
-            {FURNISH_ITEMS.map(item => (
-              <div key={item.name} className="furnish-card group">
-                <div className="relative w-full h-[250px] mb-6">
-                  <ShopTheLook spots={item.spots}>
-                    <div className="w-full h-full relative overflow-hidden">
-                      <Image 
-                        src={item.img} 
-                        alt={item.name}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500 pointer-events-none" />
-                    </div>
-                  </ShopTheLook>
+            {FURNISH_ITEMS.map(item => {
+              const cardId = item.name === "Jaipur Rajai" ? "jaipur-rajai" : undefined;
+              return (
+                <div key={item.name} id={cardId} className="furnish-card group scroll-mt-32">
+                  <div className="relative w-full h-[250px] mb-6">
+                    <ShopTheLook spots={item.spots}>
+                      <div className="w-full h-full relative overflow-hidden">
+                        <Image 
+                          src={item.img} 
+                          alt={item.name}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500 pointer-events-none" />
+                      </div>
+                    </ShopTheLook>
+                  </div>
+                  <div className="px-6 pb-6">
+                    <div className="fc-name text-[22px] font-semibold mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{item.name}</div>
+                    <div className="fc-desc text-[13px] tracking-[0.5px] leading-[1.8] text-muted">{item.desc}</div>
+                  </div>
                 </div>
-                <div className="px-6 pb-6">
-                  <div className="fc-name text-[22px] font-semibold mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{item.name}</div>
-                  <div className="fc-desc text-[13px] tracking-[0.5px] leading-[1.8] text-muted">{item.desc}</div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* ── FASHION ── */}
-      <section className="py-24 px-6 bg-ivory">
+      <section id="ethnic-fashion" className="py-24 px-6 bg-ivory scroll-mt-20">
         <div className="max-w-[1200px] mx-auto text-center">
           <p className="reveal uppercase tracking-[6px] text-[10px] mb-[10px] text-gold">Ethnic Fashion Collection</p>
           <h2 className="reveal font-light mb-[14px] font-serif text-fluid-h2 text-deep">Dress in <em className="not-italic text-rose">Jaipur's Soul</em></h2>
@@ -318,41 +321,45 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {FASHION_ITEMS.map((item, index) => (
-              <motion.div 
-                key={item.title} 
-                className="fashion-card group"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-              >
-                <div className="relative w-full h-[400px]">
-                  <ShopTheLook spots={item.spots}>
-                    <div className="w-full h-full relative overflow-hidden">
-                      <ParallaxImage 
-                        src={item.img} 
-                        alt={item.title}
-                        speed={0.15}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
-                      <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-500 pointer-events-none" />
-                    </div>
-                  </ShopTheLook>
+            {FASHION_ITEMS.map((item, index) => {
+              const cardId = item.title === "Jaipuri Handbags" ? "handcrafted-bags" : undefined;
+              return (
+                <motion.div 
+                  key={item.title} 
+                  id={cardId}
+                  className="fashion-card group scroll-mt-32"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+                >
+                  <div className="relative w-full h-[400px]">
+                    <ShopTheLook spots={item.spots}>
+                      <div className="w-full h-full relative overflow-hidden">
+                        <ParallaxImage 
+                          src={item.img} 
+                          alt={item.title}
+                          speed={0.15}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        />
+                        <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-500 pointer-events-none" />
+                      </div>
+                    </ShopTheLook>
 
-                </div>
-                <div className="p-8 text-left bg-white border-t border-sand/20 flex flex-col h-full">
-                  <div className="uppercase tracking-[2px] text-[11px] mb-1 text-gold font-semibold">{item.subtitle}</div>
-                  <div className="text-[24px] font-semibold mb-3 text-deep" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{item.title}</div>
-                  <p className="text-[13px] leading-[1.8] text-muted mb-6 line-clamp-2">{item.desc}</p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {item.tags.map(tag => (
-                      <span key={tag} className="text-[10px] tracking-[1px] px-3 py-1 rounded-full uppercase bg-blush text-muted font-medium border border-sand/30">{tag}</span>
-                    ))}
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="p-8 text-left bg-white border-t border-sand/20 flex flex-col h-full">
+                    <div className="uppercase tracking-[2px] text-[11px] mb-1 text-gold font-semibold">{item.subtitle}</div>
+                    <div className="text-[24px] font-semibold mb-3 text-deep" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{item.title}</div>
+                    <p className="text-[13px] leading-[1.8] text-muted mb-6 line-clamp-2">{item.desc}</p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {item.tags.map(tag => (
+                        <span key={tag} className="text-[10px] tracking-[1px] px-3 py-1 rounded-full uppercase bg-blush text-muted font-medium border border-sand/30">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>

@@ -27,7 +27,7 @@ export default function ArtisanCraft() {
       {/* ── HEADER NAVIGATION ── */}
       <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference">
         <a href="/" className="text-gold tracking-[4px] text-[14px] uppercase font-light">
-          ← Back to House
+          ← Back to Home
         </a>
       </nav>
 
@@ -84,7 +84,7 @@ export default function ArtisanCraft() {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative aspect-[4/5] overflow-hidden reveal">
-               <div className="absolute inset-0 bg-[url('/images/redesign/artisan.png')] bg-cover bg-center hover:scale-105 transition-transform duration-1000"></div>
+               <div className="absolute inset-0 bg-[url('/images/New%20images/Quilts.jpg')] bg-cover bg-center hover:scale-105 transition-transform duration-1000"></div>
             </div>
             <div className="reveal">
               <div className="text-[12px] uppercase tracking-[5px] text-gold/60 mb-4 font-bold">Technique 02</div>

@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
       {/* ── HEADER NAVIGATION ── */}
       <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-[#FDFBF7]/90 backdrop-blur-md border-b border-sand/30">
         <a href="/" className="text-gold tracking-[4px] text-[14px] uppercase font-light">
-          ← Back to House
+          ← Back to Home
         </a>
       </nav>
 

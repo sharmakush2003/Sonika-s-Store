@@ -21,7 +21,7 @@ export default function Footer() {
       </button>
 
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-20">
 
           {/* Column 1: House Bio */}
           <div className="reveal">
@@ -61,11 +61,10 @@ export default function Footer() {
           <div className="reveal">
             <div className="text-[12px] font-bold tracking-[5px] uppercase text-gold mb-10">Collections</div>
             <ul className="space-y-5">
-              <li><a href="#" className="footer-link">Home Furnishing</a></li>
-              <li><a href="#" className="footer-link">Ethnic Fashion</a></li>
-              <li><a href="#" className="footer-link">Jaipur Rajai Special</a></li>
-              <li><a href="#" className="footer-link">Handcrafted Bags</a></li>
-              <li><a href="#" className="footer-link">New Arrivals</a></li>
+              <li><a href="/#home-furnishing" className="footer-link">Home Furnishing</a></li>
+              <li><a href="/#ethnic-fashion" className="footer-link">Ethnic Fashion</a></li>
+              <li><a href="/#jaipur-rajai" className="footer-link">Jaipur Rajai Special</a></li>
+              <li><a href="/#handcrafted-bags" className="footer-link">Handcrafted Bags</a></li>
             </ul>
           </div>
 
@@ -79,26 +78,6 @@ export default function Footer() {
               <li><a href="/sustainability" className="footer-link">Sustainability</a></li>
               <li><a href="/privacy-policy" className="footer-link">Privacy Policy</a></li>
             </ul>
-          </div>
-
-          {/* Column 4: Stay Connected */}
-          <div className="reveal">
-            <div className="text-[12px] font-bold tracking-[5px] uppercase text-gold mb-10">Experience Jaipur</div>
-            <p className="text-[14px] leading-[1.8] text-cream/80 mb-10">
-              Subscribe to receive updates, access to exclusive deals, and more.
-            </p>
-            <div className="relative group">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full bg-transparent border-b border-gold/20 py-3 text-[14px] focus:outline-none focus:border-gold transition-colors text-cream"
-              />
-              <button className="absolute right-0 bottom-3 text-gold/60 hover:text-gold transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-            </div>
           </div>
         </div>
 
