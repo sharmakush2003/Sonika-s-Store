@@ -41,4 +41,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## 🌐 Live Website
 - **URL**: [https://sonika-store-seven.vercel.app/](https://sonika-store-seven.vercel.app/)
 
+## 📍 Store Contact Information
+- **Name**: Sonika Malik
+- **Address**: C107, Akashganga, Civil Lines, Jaipur 302006
+- **Email**: [sonikamalik.sm@gmail.com](mailto:sonikamalik.sm@gmail.com)
+
 Connected to remote GitHub repository successfully!  
