@@ -1,6 +1,16 @@
 import { Groq } from "groq-sdk";
 import { NextResponse } from "next/server";
 
+export async function OPTIONS() {
+  return NextResponse.json({}, {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
+}
+
 export async function POST(req: Request) {
   try {
     const groq = new Groq({
@@ -51,14 +61,31 @@ Keep your responses concise but helpful. Avoid long paragraphs. Use bullet point
       max_tokens: 500,
     });
 
-    return NextResponse.json({
-      content: response.choices[0]?.message?.content || "I'm sorry, I couldn't process that. Please try again or chat with us on WhatsApp.",
-    });
+    return NextResponse.json(
+      {
+        content: response.choices[0]?.message?.content || "I'm sorry, I couldn't process that. Please try again or chat with us on WhatsApp.",
+      },
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      }
+    );
   } catch (error) {
     console.error("Groq API Error:", error);
     return NextResponse.json(
       { error: "Failed to fetch response from AI" },
-      { status: 500 }
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      }
     );
   }
 }
+
